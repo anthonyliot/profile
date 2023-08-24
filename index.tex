@@ -1,0 +1,251 @@
+% Curriculum Vitae
+% Anthony Sylvain LIOT
+% 25 August 2023
+
+\documentclass[10pt,a4paper,sans]{moderncv}
+
+\usepackage{xparse}
+
+\usepackage{shellesc}
+
+\ShellEscape{rm docs/_data/languages.yml}
+\ShellEscape{rm docs/_data/patents.yml}
+\ShellEscape{rm docs/_data/education.yml}
+
+\begin{filecontents*}{docs/_data/languages.yml}
+lang1:
+    lang: French
+    level: Native
+lang2:
+    lang: Spanish
+    level: Fluent
+\end{filecontents*}
+
+\begin{filecontents*}{docs/_data/patents.yml}
+patent8:
+	url: patents.justia.com/patent/20200096945
+	pid: US20200096945
+	description: Wall clock AI voice assistant
+	date: Mars 26, 2020
+patent7:
+	url: patents.justia.com/patent/20180341811
+	pid: US20180341811
+	description: Augmented reality
+	date: May 21, 2018
+patent6:
+	url: patents.justia.com/patent/20180204061
+	pid: US20180204061
+	description: Vision intelligence management for electronic devices
+	date: January 19, 2018
+patent5:
+	url: patents.justia.com/patent/20180018825
+	pid: US20180018825
+	description: Augmented reality device and operation thereof
+	date: May 9, 2017
+patent4:
+	url: patents.justia.com/patent/20180204059
+	pid: US20180204059
+	description: System and method for contextual driven intelligence
+	date: Mars 16, 2017
+patent3:
+	url: patents.justia.com/patent/20170270510
+	pid: US20170270510
+	description: Method and apparatus to trigger mobile payment based on distance
+	date: August 25, 2016
+patent2:
+	url: patents.justia.com/patent/20170206095
+	pid: US20170206095
+	description: Virtual agent
+	date: January 14, 2016
+patent1:
+	url: patents.justia.com/patent/20180149864
+	pid: US20180149864
+	description: Image processing for head mounted display devices
+	date: July 16, 2015
+\end{filecontents*}
+
+\begin{filecontents*}{docs/_data/education.yml}
+edu1:
+	degree: Master’s degree (MSc)
+	uni: University of Montpellier 2 (Science & Technology)
+	city: Montpellier (France)
+	year: 2009
+	summary: Artificial Intelligence (AI) Engineering
+edu2:
+	degree: Bachelor’s degree (BSc)
+	uni: University of Caen (Science)
+	city: Caen (France)
+	year: 2007
+	summary: Software Engineering
+\end{filecontents*}
+
+\begin{filecontents*}{docs/_data/experience.yml}
+\end{filecontents*}
+
+\ExplSyntaxOn
+
+\NewDocumentCommand{\readYAML}{m}
+	{% #1 = file (no .yaml extension)
+	\sr_readyaml:n { #1 }
+	}
+\NewExpandableDocumentCommand{\getfromYAML}{mmm}
+	{% #1 = file (no .yaml extension)
+	% #2 = section
+	% #3 = key
+	\prop_item:cn { g_sr_readyaml_#1_prop } { #2@#3 }
+	}
+
+\tl_new:N \l__sr_readyaml_currsection_tl
+\seq_new:N \l__sr_readyaml_line_seq
+\ior_new:N \g_sr_readyaml_stream
+
+\cs_generate_variant:Nn \seq_set_split:Nnn { NV }
+\cs_generate_variant:Nn \prop_gput:Nnn { cxx }
+\prg_generate_conditional_variant:Nnn \tl_if_blank:n { f } { TF }
+
+\cs_new_protected:Nn \sr_readyaml:n
+	{
+	\prop_if_exist:cF { g_sr_readyaml_#1_prop }
+	{
+	\__sr_readyaml_read:n { #1 }
+	}
+	}
+
+\cs_new_protected:Nn \__sr_readyaml_read:n
+	{
+	\prop_new:c { g_sr_readyaml_#1_prop }
+	\ior_open:Nn \g_sr_readyaml_stream { #1.yml }
+	\ior_str_map_inline:Nn \g_sr_readyaml_stream
+	{
+	\__sr_readyaml_line:nn { #1 } { ##1 }
+	}
+	\ior_close:N \g_sr_readyaml_stream
+	}
+
+\cs_new_protected:Nn \__sr_readyaml_line:nn
+	{% #1 is the file name, #2 the current line
+	\tl_if_blank:nF { #2 }
+	{
+	\seq_set_split:NVn \l__sr_readyaml_line_seq \c_colon_str { #2 }
+	\tl_if_blank:fTF { \seq_item:Nn \l__sr_readyaml_line_seq { 2 } }
+		{% nothing after the colon, set the current section
+		\tl_set:Nx \l__sr_readyaml_currsection_tl { \seq_item:Nn \l__sr_readyaml_line_seq { 1 } }
+		}
+		{% value after the colon, add to the property list
+		\prop_gput:cxx
+		% prop name
+		{ g_sr_readyaml_#1_prop }
+		% key
+		{ \l__sr_readyaml_currsection_tl @ \seq_item:Nn \l__sr_readyaml_line_seq { 1 } }
+		% value
+		{ \seq_item:Nn \l__sr_readyaml_line_seq { 2 } }
+		}
+	}
+	}
+
+\ExplSyntaxOff
+
+\moderncvstyle{banking}
+
+\moderncvcolor{grey} 
+
+% adjust the page margins
+\usepackage[scale=0.9]{geometry}
+
+% character encoding
+\usepackage[utf8]{inputenc}
+
+% date of today
+\usepackage[useregional]{datetime2}
+
+\usepackage{anyfontsize}
+
+\usepackage{multicol}
+
+\usepackage{filecontents}
+
+% personal data
+\name{Anthony}{Liot}
+\firstname{Anthony}
+\familyname{Liot} 
+\title{Principal Engineer, Research}
+\address{1277 Copper Peak Ln, San Jose, CA 95120, USA}
+\phone[mobile]{+1~408~823~6316}                  
+\email{anthony.liot@gmail.com}
+\social[linkedin]{liotanthony}
+\social[github]{anthonyliot}
+\homepage{anthonyliot.github.io/profile}
+
+\usepackage{xpatch}
+\makeatletter
+\xpatchcmd{\makehead}{\titlestyle{~|~\@title}}{\par\vskip1ex\titlestyle{\@title}}{}{}
+\makeatother
+
+% define new color
+\usepackage{color}
+\definecolor{gray}{RGB}{128,128,128}
+\newcommand\Colorhref[3][gray]{\href{https://#2}{\small\color{#1}#3}}
+
+\recomputelengths
+
+\begin{document}
+
+\makecvtitle
+
+%----------------------------------------------------------------------------------------
+% PATENT SECTION
+%----------------------------------------------------------------------------------------
+
+\readYAML{docs/_data/patents}
+\section{Patents \Colorhref{https://patents.justia.com/inventor/anthony-s-liot}{\#1} \Colorhref{https://patents.justia.com/inventor/anthony-liot}{\#2}}
+
+\begin{itemize}
+	\item \cvlanguage{}{\Colorhref{\getfromYAML{docs/_data/patents}{patent8}{url}}{\getfromYAML{docs/_data/patents}{patent8}{pid}:} \getfromYAML{docs/_data/patents}{patent8}{description}}{\getfromYAML{docs/_data/patents}{patent8}{date}}{}
+	\item \cvlanguage{}{\Colorhref{\getfromYAML{docs/_data/patents}{patent7}{url}}{\getfromYAML{docs/_data/patents}{patent7}{pid}:} \getfromYAML{docs/_data/patents}{patent7}{description}}{\getfromYAML{docs/_data/patents}{patent7}{date}}{}
+	\item \cvlanguage{}{\Colorhref{\getfromYAML{docs/_data/patents}{patent6}{url}}{\getfromYAML{docs/_data/patents}{patent6}{pid}:} \getfromYAML{docs/_data/patents}{patent6}{description}}{\getfromYAML{docs/_data/patents}{patent6}{date}}{}
+	\item \cvlanguage{}{\Colorhref{\getfromYAML{docs/_data/patents}{patent5}{url}}{\getfromYAML{docs/_data/patents}{patent5}{pid}:} \getfromYAML{docs/_data/patents}{patent5}{description}}{\getfromYAML{docs/_data/patents}{patent5}{date}}{}
+	\item \cvlanguage{}{\Colorhref{\getfromYAML{docs/_data/patents}{patent4}{url}}{\getfromYAML{docs/_data/patents}{patent4}{pid}:} \getfromYAML{docs/_data/patents}{patent4}{description}}{\getfromYAML{docs/_data/patents}{patent4}{date}}{}
+	\item \cvlanguage{}{\Colorhref{\getfromYAML{docs/_data/patents}{patent3}{url}}{\getfromYAML{docs/_data/patents}{patent3}{pid}:} \getfromYAML{docs/_data/patents}{patent3}{description}}{\getfromYAML{docs/_data/patents}{patent3}{date}}{}
+	\item \cvlanguage{}{\Colorhref{\getfromYAML{docs/_data/patents}{patent2}{url}}{\getfromYAML{docs/_data/patents}{patent2}{pid}:} \getfromYAML{docs/_data/patents}{patent2}{description}}{\getfromYAML{docs/_data/patents}{patent2}{date}}{}
+	\item \cvlanguage{}{\Colorhref{\getfromYAML{docs/_data/patents}{patent1}{url}}{\getfromYAML{docs/_data/patents}{patent1}{pid}:} \getfromYAML{docs/_data/patents}{patent1}{description}}{\getfromYAML{docs/_data/patents}{patent1}{date}}{}
+\end{itemize}
+
+%----------------------------------------------------------------------------------------
+% EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+
+\readYAML{docs/_data/education}
+\section{Education}
+
+\cventry
+	{\getfromYAML{docs/_data/education}{edu1}{year}}
+	{\getfromYAML{docs/_data/education}{edu1}{degree}}
+	{\getfromYAML{docs/_data/education}{edu1}{uni}}
+	{\getfromYAML{docs/_data/education}{edu1}{city}}
+	{\textit{}}
+	{\getfromYAML{docs/_data/education}{edu1}{summary}} 
+
+\cventry
+	{\getfromYAML{docs/_data/education}{edu2}{year}}
+	{\getfromYAML{docs/_data/education}{edu2}{degree}}
+	{\getfromYAML{docs/_data/education}{edu2}{uni}}
+	{\getfromYAML{docs/_data/education}{edu2}{city}}
+	{\textit{}}
+	{\getfromYAML{docs/_data/education}{edu2}{summary}} 
+
+
+%----------------------------------------------------------------------------------------
+% LANGUAGES SECTION
+%----------------------------------------------------------------------------------------
+
+\readYAML{docs/_data/languages}
+\section{Languages}
+\begin{itemize}
+	\item \getfromYAML{docs/_data/languages}{lang1}{lang} \getfromYAML{docs/_data/languages}{lang1}{level}
+	\item \getfromYAML{docs/_data/languages}{lang2}{lang} \getfromYAML{docs/_data/languages}{lang2}{level}
+\end{itemize}
+	
+\clearpage
+
+\end{document}
+

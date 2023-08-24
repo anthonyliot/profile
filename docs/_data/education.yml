@@ -1,0 +1,13 @@
+edu1:
+ degree: Master’s degree (MSc)
+ uni: University of Montpellier 2 (Science & Technology)
+ city: Montpellier (France)
+ year: 2009
+ summary: Artificial Intelligence (AI) Engineering
+
+edu2:
+ degree: Bachelor’s degree (BSc)
+ uni: University of Caen (Science)
+ city: Caen (France)
+ year: 2007
+ summary: Software Engineering

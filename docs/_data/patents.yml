@@ -1,0 +1,40 @@
+patent8:
+ url: patents.justia.com/patent/20200096945
+ pid: US20200096945
+ description: Wall clock AI voice assistant
+ date: Mars 26, 2020
+patent7:
+ url: patents.justia.com/patent/20180341811
+ pid: US20180341811
+ description: Augmented reality
+ date: May 21, 2018
+patent6:
+ url: patents.justia.com/patent/20180204061
+ pid: US20180204061
+ description: Vision intelligence management for electronic devices
+ date: January 19, 2018
+patent5:
+ url: patents.justia.com/patent/20180018825
+ pid: US20180018825
+ description: Augmented reality device and operation thereof
+ date: May 9, 2017
+patent4:
+ url: patents.justia.com/patent/20180204059
+ pid: US20180204059
+ description: System and method for contextual driven intelligence
+ date: Mars 16, 2017
+patent3:
+ url: patents.justia.com/patent/20170270510
+ pid: US20170270510
+ description: Method and apparatus to trigger mobile payment based on distance
+ date: August 25, 2016
+patent2:
+ url: patents.justia.com/patent/20170206095
+ pid: US20170206095
+ description: Virtual agent
+ date: January 14, 2016
+patent1:
+ url: patents.justia.com/patent/20180149864
+ pid: US20180149864
+ description: Image processing for head mounted display devices
+ date: July 16, 2015
