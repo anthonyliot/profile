@@ -94,7 +94,7 @@
           <h2>Education</h2>
         </header>
 
-        {% for education in site.data.education %}
+        {% for education in site.data.educations %}
         <div class="resume-item" itemscope itemprop="alumniOf" itemtype="http://schema.org/CollegeOrUniversity">
           <h3 class="resume-item-title" itemprop="name">{{ education[1].uni }}</h3>
           <h4 class="resume-item-details group" itemprop="description">{{ education[1].degree }} &bull; {{ education[1].year }} &bull; {{ education[1].city }}</h4>

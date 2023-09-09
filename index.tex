@@ -2,85 +2,9 @@
 % Anthony Sylvain LIOT
 % 25 August 2023
 
-\documentclass[10pt,a4paper,sans]{moderncv}
+\documentclass[9pt,a4paper,sans]{moderncv}
 
 \usepackage{xparse}
-
-\usepackage{shellesc}
-
-\ShellEscape{rm docs/_data/languages.yml}
-\ShellEscape{rm docs/_data/patents.yml}
-\ShellEscape{rm docs/_data/education.yml}
-
-\begin{filecontents*}{docs/_data/languages.yml}
-lang1:
-    lang: French
-    level: Native
-lang2:
-    lang: Spanish
-    level: Fluent
-\end{filecontents*}
-
-\begin{filecontents*}{docs/_data/patents.yml}
-patent8:
-	url: patents.justia.com/patent/20200096945
-	pid: US20200096945
-	description: Wall clock AI voice assistant
-	date: Mars 26, 2020
-patent7:
-	url: patents.justia.com/patent/20180341811
-	pid: US20180341811
-	description: Augmented reality
-	date: May 21, 2018
-patent6:
-	url: patents.justia.com/patent/20180204061
-	pid: US20180204061
-	description: Vision intelligence management for electronic devices
-	date: January 19, 2018
-patent5:
-	url: patents.justia.com/patent/20180018825
-	pid: US20180018825
-	description: Augmented reality device and operation thereof
-	date: May 9, 2017
-patent4:
-	url: patents.justia.com/patent/20180204059
-	pid: US20180204059
-	description: System and method for contextual driven intelligence
-	date: Mars 16, 2017
-patent3:
-	url: patents.justia.com/patent/20170270510
-	pid: US20170270510
-	description: Method and apparatus to trigger mobile payment based on distance
-	date: August 25, 2016
-patent2:
-	url: patents.justia.com/patent/20170206095
-	pid: US20170206095
-	description: Virtual agent
-	date: January 14, 2016
-patent1:
-	url: patents.justia.com/patent/20180149864
-	pid: US20180149864
-	description: Image processing for head mounted display devices
-	date: July 16, 2015
-\end{filecontents*}
-
-\begin{filecontents*}{docs/_data/education.yml}
-edu1:
-	degree: Master’s degree (MSc)
-	uni: University of Montpellier 2 (Science & Technology)
-	city: Montpellier (France)
-	year: 2009
-	summary: Artificial Intelligence (AI) Engineering
-edu2:
-	degree: Bachelor’s degree (BSc)
-	uni: University of Caen (Science)
-	city: Caen (France)
-	year: 2007
-	summary: Software Engineering
-\end{filecontents*}
-
-\begin{filecontents*}{docs/_data/experience.yml}
-\end{filecontents*}
 
 \ExplSyntaxOn
 
@@ -164,6 +88,8 @@ edu2:
 
 \usepackage{filecontents}
 
+\usepackage{forloop}
+
 % personal data
 \name{Anthony}{Liot}
 \firstname{Anthony}
@@ -184,13 +110,124 @@ edu2:
 % define new color
 \usepackage{color}
 \definecolor{gray}{RGB}{128,128,128}
-\newcommand\Colorhref[3][gray]{\href{https://#2}{\small\color{#1}#3}}
+\newcommand\Colorhref[3][gray]{\href{https://#2}{\scriptsize\color{#1}#3}}
 
 \recomputelengths
 
 \begin{document}
+\begin{scriptsize}
+
+%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+% PAGE 1
+%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 \makecvtitle
+
+%----------------------------------------------------------------------------------------
+% SUMMARY SECTION
+%----------------------------------------------------------------------------------------
+
+\readYAML{docs/_data/summary}
+\section{Summary}
+\begin{itemize}
+	\item[-] 15+ years of experience in software development for desktop and mobile.
+	\item[-] Over 8+ years experience managing individual and team projects.
+	\item[-] Over 5+ years mentoring other team members on software design and development.
+	\item[-] Extensive experience architecting and developing large scale design and cross-platform APIs.
+	\item[-] Highly skilled in a variety of software languages, tools and methodologies.
+	\item[-] Proficient in object oriented design.
+	\item[-] Perfectionist, proactive, results-oriented, seeking for quality, correctness, performance and maintainability.
+	\item[-] Excellent communication and organization skills.
+\end{itemize}
+
+%----------------------------------------------------------------------------------------
+% ACCOMPLISHMENTS SECTION
+%----------------------------------------------------------------------------------------
+
+\readYAML{docs/_data/accomplishements}
+\section{Accomplishements}
+\begin{itemize}
+	\item[-] Best of Innovation award finalists at CES.\hfill2020
+	\item[-] President's Awards in recognition of outstanding technical contributions to SRA.\hfill2019
+	\item[-] Reference implementation for Bixby Vision available on Samsung Galaxy Devices.\Colorhref{www.samsung.com/global/galaxy/apps/bixby/vision/}{\#1}\hfill2016
+	\item[-] Khronos individual member honorary, based on my significant contributions to WebCL.\Colorhref{www.khronos.org/registry/webcl/specs/latest/1.0/}{\#1}\hfill2014
+	\item[-] First engineer to convert a 3D Game Engine in Javascript.\Colorhref{blog.mozilla.org/futurereleases/2013/02/20/one-developer-one-impressive-3d-game-demo-ported-to-the-web-with-no-plugins}{\#1}\Colorhref{anthonyliot.github.io/crypt/}{\#2}\hfill2013
+\end{itemize}
+
+%----------------------------------------------------------------------------------------
+% EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+
+\readYAML{docs/_data/experiences}
+\section{Experiences}
+
+\cventry
+	{\getfromYAML{docs/_data/experiences}{exp6}{year}}
+	{\getfromYAML{docs/_data/experiences}{exp6}{title}}
+	{\getfromYAML{docs/_data/experiences}{exp6}{company}}
+	{}
+	{\getfromYAML{docs/_data/experiences}{exp6}{place}}
+	{}
+	{}
+
+\cventry
+	{\getfromYAML{docs/_data/experiences}{exp5}{year}}
+	{\getfromYAML{docs/_data/experiences}{exp5}{title}}
+	{\getfromYAML{docs/_data/experiences}{exp5}{company}}
+	{}
+	{\getfromYAML{docs/_data/experiences}{exp5}{place}}
+	{}
+	{}
+
+\cventry
+	{\getfromYAML{docs/_data/experiences}{exp4}{year}}
+	{\getfromYAML{docs/_data/experiences}{exp4}{title}}
+	{\getfromYAML{docs/_data/experiences}{exp4}{company}}
+	{}
+	{\getfromYAML{docs/_data/experiences}{exp4}{place}}
+	{}
+	{}
+
+\cventry
+	{\getfromYAML{docs/_data/experiences}{exp3}{year}}
+	{\getfromYAML{docs/_data/experiences}{exp3}{title}}
+	{\getfromYAML{docs/_data/experiences}{exp3}{company}}
+	{}
+	{\getfromYAML{docs/_data/experiences}{exp3}{place}}
+	{}
+	{}
+
+\cventry
+	{\getfromYAML{docs/_data/experiences}{exp2}{year}}
+	{\getfromYAML{docs/_data/experiences}{exp2}{title}}
+	{\getfromYAML{docs/_data/experiences}{exp2}{company}}
+	{}
+	{\getfromYAML{docs/_data/experiences}{exp2}{place}}
+	{}
+	{}
+
+\cventry
+	{\getfromYAML{docs/_data/experiences}{exp1}{year}}
+	{\getfromYAML{docs/_data/experiences}{exp1}{title}}
+	{\getfromYAML{docs/_data/experiences}{exp1}{company}}
+	{}
+	{\getfromYAML{docs/_data/experiences}{exp1}{place}}
+	{}
+	{}
+
+%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+% PAGE 2
+%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+\newpage
+
+%----------------------------------------------------------------------------------------
+% TECHNICAL SKILLS SECTION
+%----------------------------------------------------------------------------------------
+
+\readYAML{docs/_data/technicalskills}
+\section{Technical Skills}
+
 
 %----------------------------------------------------------------------------------------
 % PATENT SECTION
@@ -214,24 +251,24 @@ edu2:
 % EDUCATION SECTION
 %----------------------------------------------------------------------------------------
 
-\readYAML{docs/_data/education}
-\section{Education}
+\readYAML{docs/_data/educations}
+\section{Educations}
 
 \cventry
-	{\getfromYAML{docs/_data/education}{edu1}{year}}
-	{\getfromYAML{docs/_data/education}{edu1}{degree}}
-	{\getfromYAML{docs/_data/education}{edu1}{uni}}
-	{\getfromYAML{docs/_data/education}{edu1}{city}}
+	{\getfromYAML{docs/_data/educations}{edu2}{year}}
+	{\getfromYAML{docs/_data/educations}{edu2}{degree}}
+	{\getfromYAML{docs/_data/educations}{edu2}{uni}}
+	{\getfromYAML{docs/_data/educations}{edu2}{city}}
 	{\textit{}}
-	{\getfromYAML{docs/_data/education}{edu1}{summary}} 
+	{\getfromYAML{docs/_data/educations}{edu2}{summary}} 
 
 \cventry
-	{\getfromYAML{docs/_data/education}{edu2}{year}}
-	{\getfromYAML{docs/_data/education}{edu2}{degree}}
-	{\getfromYAML{docs/_data/education}{edu2}{uni}}
-	{\getfromYAML{docs/_data/education}{edu2}{city}}
+	{\getfromYAML{docs/_data/educations}{edu1}{year}}
+	{\getfromYAML{docs/_data/educations}{edu1}{degree}}
+	{\getfromYAML{docs/_data/educations}{edu1}{uni}}
+	{\getfromYAML{docs/_data/educations}{edu1}{city}}
 	{\textit{}}
-	{\getfromYAML{docs/_data/education}{edu2}{summary}} 
+	{\getfromYAML{docs/_data/educations}{edu1}{summary}} 
 
 
 %----------------------------------------------------------------------------------------
@@ -241,11 +278,12 @@ edu2:
 \readYAML{docs/_data/languages}
 \section{Languages}
 \begin{itemize}
-	\item \getfromYAML{docs/_data/languages}{lang1}{lang} \getfromYAML{docs/_data/languages}{lang1}{level}
 	\item \getfromYAML{docs/_data/languages}{lang2}{lang} \getfromYAML{docs/_data/languages}{lang2}{level}
+	\item \getfromYAML{docs/_data/languages}{lang1}{lang} \getfromYAML{docs/_data/languages}{lang1}{level}
 \end{itemize}
 	
 \clearpage
 
+\end{scriptsize}
 \end{document}
 
