@@ -1,0 +1,23 @@
+accomps: 
+  list: accomp1,accomp2,accomp3,accomp4,accomp5
+
+accomp1:
+  entry: Best of Innovation award finalists at CES.
+  date: 2020
+  link:
+accomp2:  
+  entry: President's Awards in recognition of outstanding technical contributions to SRA.
+  date: 2019
+  link:
+accomp3:  
+  entry: Reference implementation for Bixby Vision available on Samsung Galaxy Devices.
+  date: 2016
+  link: www.samsung.com/global/galaxy/apps/bixby/vision/
+accomp4:  
+  entry: Khronos individual member honorary, based on my significant contributions to WebCL.
+  date: 2014
+  link: www.khronos.org/registry/webcl/specs/latest/1.0/
+accomp5:  
+  entry: First engineer to convert a 3D Game Engine in Javascript.
+  date: 2013
+  link: blog.mozilla.org/futurereleases/2013/02/20/one-developer-one-impressive-3d-game-demo-ported-to-the-web-with-no-plugins

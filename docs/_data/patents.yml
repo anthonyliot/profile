@@ -1,3 +1,6 @@
+patents: 
+  list: patent8,patent7,patent6,patent5,patent4,patent3,patent2,patent1
+
 patent8:
  url: patents.justia.com/patent/20200096945
  pid: US20200096945

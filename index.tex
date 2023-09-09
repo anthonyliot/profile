@@ -9,14 +9,15 @@
 \ExplSyntaxOn
 
 \NewDocumentCommand{\readYAML}{m}
-{% #1 = file (no .yaml extension)
-\sr_readyaml:n { #1 }
+{	% #1 = file (no .yaml extension)
+	\sr_readyaml:n { #1 }
 }
+
 \NewExpandableDocumentCommand{\getfromYAML}{mmm}
-{% #1 = file (no .yaml extension)
-% #2 = section
-% #3 = key
-\prop_item:cn { g_sr_readyaml_#1_prop } { #2@#3 }
+{	% #1 = file (no .yaml extension)
+	% #2 = section
+	% #3 = key
+	\prop_item:cn { g_sr_readyaml_#1_prop } { #2@#3 }
 }
 
 \tl_new:N \l__sr_readyaml_currsection_tl
@@ -29,59 +30,59 @@
 
 \cs_new_protected:Nn \sr_readyaml:n
 {
-\prop_if_exist:cF { g_sr_readyaml_#1_prop }
-{
-\__sr_readyaml_read:n { #1 }
-}
+	\prop_if_exist:cF { g_sr_readyaml_#1_prop }
+	{
+		\__sr_readyaml_read:n { #1 }
+	}
 }
 
 \cs_new_protected:Nn \__sr_readyaml_read:n
 {
-\prop_new:c { g_sr_readyaml_#1_prop }
-\ior_open:Nn \g_sr_readyaml_stream { #1.yml }
-\ior_str_map_inline:Nn \g_sr_readyaml_stream
-{
-\__sr_readyaml_line:nn { #1 } { ##1 }
-}
-\ior_close:N \g_sr_readyaml_stream
+	\prop_new:c { g_sr_readyaml_#1_prop }
+	\ior_open:Nn \g_sr_readyaml_stream { #1.yml }
+	\ior_str_map_inline:Nn \g_sr_readyaml_stream
+	{
+		\__sr_readyaml_line:nn { #1 } { ##1 }
+	}
+	\ior_close:N \g_sr_readyaml_stream
 }
 
 \cs_new_protected:Nn \__sr_readyaml_line:nn
 {% #1 is the file name, #2 the current line
-\tl_if_blank:nF { #2 }
-{
-\seq_set_split:NVn \l__sr_readyaml_line_seq \c_colon_str { #2 }
-\tl_if_blank:fTF { \seq_item:Nn \l__sr_readyaml_line_seq { 2 } }
-{% nothing after the colon, set the current section
-\tl_set:Nx \l__sr_readyaml_currsection_tl { \seq_item:Nn \l__sr_readyaml_line_seq { 1 } }
-}
-{% value after the colon, add to the property list
-\prop_gput:cxx
-% prop name
-{ g_sr_readyaml_#1_prop }
-% key
-{ \l__sr_readyaml_currsection_tl @ \seq_item:Nn \l__sr_readyaml_line_seq { 1 } }
-% value
-{ \seq_item:Nn \l__sr_readyaml_line_seq { 2 } }
-}
-}
+	\tl_if_blank:nF { #2 }
+	{
+		\seq_set_split:NVn \l__sr_readyaml_line_seq \c_colon_str { #2 }
+		\tl_if_blank:fTF { \seq_item:Nn \l__sr_readyaml_line_seq { 2 } }
+		{% nothing after the colon, set the current section
+			\tl_set:Nx \l__sr_readyaml_currsection_tl { \seq_item:Nn \l__sr_readyaml_line_seq { 1 } }
+		}
+			{% value after the colon, add to the property list
+			\prop_gput:cxx
+			% prop name
+			{ g_sr_readyaml_#1_prop }
+			% key
+			{ \l__sr_readyaml_currsection_tl @ \seq_item:Nn \l__sr_readyaml_line_seq { 1 } }
+			% value
+			{ \seq_item:Nn \l__sr_readyaml_line_seq { 2 } }
+		}
+	}
 }
 
 \NewDocumentCommand{\xforeach}{sO{}mm}
 {
-\IfBooleanTF { #1 }
-{
-\marks_xforeach:Vnn #3 { #2 } { #4 }
-}
-{
-\marks_xforeach:nnn { #3 } { #2 } { #4 }
-}
+	\IfBooleanTF { #1 }
+	{
+		\marks_xforeach:Vnn #3 { #2 } { #4 }
+	}
+	{
+		\marks_xforeach:nnn { #3 } { #2 } { #4 }
+	}
 }
 
 \keys_define:nn { marks/xforeach }
 {
-upto  .int_set:N   = \l_marks_xforeach_upto_int,
-items .clist_set:N = \l_marks_xforeach_items_clist,
+	upto  .int_set:N   = \l_marks_xforeach_upto_int,
+	items .clist_set:N = \l_marks_xforeach_items_clist,
 }
 
 \clist_new:N \l__marks_xforeach_main_clist
@@ -90,35 +91,35 @@ items .clist_set:N = \l_marks_xforeach_items_clist,
 
 \cs_new_protected:Nn \marks_xforeach:nnn
 {
-\clist_set:Nn \l__marks_xforeach_main_clist { #1 }
-\keys_set:nn { marks/xforeach } { upto=-1, items=, #2 }
-\cs_set_protected:Nn \__marks_xforeach_cycle:n { #3 }
+	\clist_set:Nn \l__marks_xforeach_main_clist { #1 }
+	\keys_set:nn { marks/xforeach } { upto=-1, items=, #2 }
+	\cs_set_protected:Nn \__marks_xforeach_cycle:n { #3 }
 
-\seq_clear:N \l__marks_xforeach_items_seq
-\clist_if_empty:NTF \l_marks_xforeach_items_clist
-{% items not specified
-\int_compare:nT { \l_marks_xforeach_upto_int = -1 }
-{
-\int_set:Nn \l_marks_xforeach_upto_int
-{ \clist_count:N \l__marks_xforeach_main_clist }
-}
-\int_step_inline:nn { \l_marks_xforeach_upto_int }
-{
-\seq_put_right:Nn \l__marks_xforeach_items_seq { ##1 }
-}
-}
-{% items
-\seq_set_from_clist:NN \l__marks_xforeach_items_seq \l_marks_xforeach_items_clist
-}
-\seq_clear:N \l__marks_xforeach_main_seq
-\seq_map_inline:Nn \l__marks_xforeach_items_seq
-{
-\seq_put_right:Nx \l__marks_xforeach_main_seq
-{
-\clist_item:Nn \l__marks_xforeach_main_clist { ##1 }
-}
-}
-\seq_map_function:NN \l__marks_xforeach_main_seq \__marks_xforeach_cycle:n
+	\seq_clear:N \l__marks_xforeach_items_seq
+	\clist_if_empty:NTF \l_marks_xforeach_items_clist
+	{% items not specified
+		\int_compare:nT { \l_marks_xforeach_upto_int = -1 }
+		{
+			\int_set:Nn \l_marks_xforeach_upto_int
+			{ \clist_count:N \l__marks_xforeach_main_clist }
+		}
+		\int_step_inline:nn { \l_marks_xforeach_upto_int }
+		{
+			\seq_put_right:Nn \l__marks_xforeach_items_seq { ##1 }
+		}
+	}
+	{% items
+		\seq_set_from_clist:NN \l__marks_xforeach_items_seq \l_marks_xforeach_items_clist
+	}
+	\seq_clear:N \l__marks_xforeach_main_seq
+	\seq_map_inline:Nn \l__marks_xforeach_items_seq
+	{
+		\seq_put_right:Nx \l__marks_xforeach_main_seq
+		{
+			\clist_item:Nn \l__marks_xforeach_main_clist { ##1 }
+		}
+	}
+	\seq_map_function:NN \l__marks_xforeach_main_seq \__marks_xforeach_cycle:n
 }
 \cs_generate_variant:Nn \marks_xforeach:nnn { V }
 
@@ -184,29 +185,36 @@ items .clist_set:N = \l_marks_xforeach_items_clist,
 
 \readYAML{docs/_data/summary}
 \section{Summary}
+\edef\summary{\getfromYAML{docs/_data/summary}{sums}{list}}
 \begin{itemize}
-	\item[-] 15+ years of experience in software development for desktop and mobile.
-	\item[-] Over 8+ years experience managing individual and team projects.
-	\item[-] Over 5+ years mentoring other team members on software design and development.
-	\item[-] Extensive experience architecting and developing large scale design and cross-platform APIs.
-	\item[-] Highly skilled in a variety of software languages, tools and methodologies.
-	\item[-] Proficient in object oriented design.
-	\item[-] Perfectionist, proactive, results-oriented, seeking for quality, correctness, performance and maintainability.
-	\item[-] Excellent communication and organization skills.
+	\xforeach*{\summary}{
+		\item[-] \getfromYAML{docs/_data/summary}{#1}{entry}
+	}
 \end{itemize}
 
 %----------------------------------------------------------------------------------------
 % ACCOMPLISHMENTS SECTION
 %----------------------------------------------------------------------------------------
+\newcommand{\Empty}[3]{%
+    \ifstrempty{#1}%
+    {%
+        #2% If #1 is empty
+    }{%
+        #3% If #1 is not empty
+    }%
+}
+
+% \Colorhref{\getfromYAML{docs/_data/accomplishements}{#1}{link}}{\#1}
+% \Empty{\getfromYAML{docs/_data/accomplishements}{#1}{link}}{A}{B}
+% \ifstrempty{\getfromYAML{docs/_data/accomplishements}{#1}{link}}{A}{B}
 
 \readYAML{docs/_data/accomplishements}
 \section{Accomplishements}
+\edef\accomplishements{\getfromYAML{docs/_data/accomplishements}{accomps}{list}}
 \begin{itemize}
-	\item[-] Best of Innovation award finalists at CES.\hfill2020
-	\item[-] President's Awards in recognition of outstanding technical contributions to SRA.\hfill2019
-	\item[-] Reference implementation for Bixby Vision available on Samsung Galaxy Devices.\Colorhref{www.samsung.com/global/galaxy/apps/bixby/vision/}{\#1}\hfill2016
-	\item[-] Khronos individual member honorary, based on my significant contributions to WebCL.\Colorhref{www.khronos.org/registry/webcl/specs/latest/1.0/}{\#1}\hfill2014
-	\item[-] First engineer to convert a 3D Game Engine in Javascript.\Colorhref{blog.mozilla.org/futurereleases/2013/02/20/one-developer-one-impressive-3d-game-demo-ported-to-the-web-with-no-plugins}{\#1}\Colorhref{anthonyliot.github.io/crypt/}{\#2}\hfill2013
+	\xforeach*{\accomplishements}{
+		\item[-] \getfromYAML{docs/_data/accomplishements}{#1}{entry} \hfill\getfromYAML{docs/_data/accomplishements}{#1}{date}
+	}
 \end{itemize}
 
 %----------------------------------------------------------------------------------------
@@ -215,12 +223,13 @@ items .clist_set:N = \l_marks_xforeach_items_clist,
 
 \readYAML{docs/_data/experiences}
 \section{Experiences}
-\newcommand{\experiences}{exp6,exp5,exp4,exp3,exp2,exp1}
+
+\edef\experiences{\getfromYAML{docs/_data/experiences}{exps}{list}}
 \xforeach*{\experiences}{
 	\cventry
 	{\getfromYAML{docs/_data/experiences}{#1}{year}}
-	{\getfromYAML{docs/_data/experiences}{#1}{title}}
 	{\getfromYAML{docs/_data/experiences}{#1}{company}}
+	{\getfromYAML{docs/_data/experiences}{#1}{title}}
 	{}
 	{\getfromYAML{docs/_data/experiences}{#1}{place}}
 	{}
@@ -240,14 +249,13 @@ items .clist_set:N = \l_marks_xforeach_items_clist,
 \readYAML{docs/_data/technicalskills}
 \section{Technical Skills}
 
-
 %----------------------------------------------------------------------------------------
 % PATENT SECTION
 %----------------------------------------------------------------------------------------
 
 \readYAML{docs/_data/patents}
 \section{Patents \Colorhref{https://patents.justia.com/inventor/anthony-s-liot}{\#1} \Colorhref{https://patents.justia.com/inventor/anthony-liot}{\#2}}
-\newcommand{\patents}{patent8,patent7,patent6,patent5,patent4,patent3,patent2,patent1}
+\edef\patents{\getfromYAML{docs/_data/patents}{patents}{list}}
 \begin{itemize}
 \xforeach*{\patents}{
 	\item[-] \Colorhref{\getfromYAML{docs/_data/patents}{#1}{url}}{\getfromYAML{docs/_data/patents}{#1}{pid}:} \getfromYAML{docs/_data/patents}{#1}{description}\hfill\getfromYAML{docs/_data/patents}{#1}{date}
@@ -260,7 +268,7 @@ items .clist_set:N = \l_marks_xforeach_items_clist,
 
 \readYAML{docs/_data/educations}
 \section{Educations}
-\newcommand{\educations}{edu2,edu1}
+\edef\educations{\getfromYAML{docs/_data/educations}{edus}{list}}
 \xforeach*{\educations}{
 \cventry
 	{\getfromYAML{docs/_data/educations}{#1}{year}}
@@ -277,7 +285,7 @@ items .clist_set:N = \l_marks_xforeach_items_clist,
 
 \readYAML{docs/_data/languages}
 \section{Languages}
-\newcommand{\languages}{lang2,lang1}
+\edef\languages{\getfromYAML{docs/_data/languages}{langs}{list}}
 \begin{itemize}
 \xforeach*{\languages}{
 	\item[-] \getfromYAML{docs/_data/languages}{#1}{lang} \getfromYAML{docs/_data/languages}{#1}{level}

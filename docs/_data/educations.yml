@@ -1,3 +1,6 @@
+edus: 
+  list: edu2,edu1
+
 edu2:
  degree: Master’s degree (MSc)
  uni: University of Montpellier 2 (Science & Technology)

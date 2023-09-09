@@ -1,3 +1,6 @@
+langs: 
+  list: lang2,lang1
+
 lang2:
     lang: French
     level: Native
