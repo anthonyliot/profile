@@ -6,6 +6,8 @@
 
 \usepackage{xparse}
 
+\usepackage{xstring}
+
 \ExplSyntaxOn
 
 \NewDocumentCommand{\readYAML}{m}
@@ -186,36 +188,23 @@
 \readYAML{docs/_data/summary}
 \section{Summary}
 \edef\summary{\getfromYAML{docs/_data/summary}{sums}{list}}
-\begin{itemize}
-	\xforeach*{\summary}{
-		\item[-] \getfromYAML{docs/_data/summary}{#1}{entry}
-	}
-\end{itemize}
+\xforeach*{\summary}{
+	\getfromYAML{docs/_data/summary}{#1}{entry} \\
+}
 
 %----------------------------------------------------------------------------------------
 % ACCOMPLISHMENTS SECTION
 %----------------------------------------------------------------------------------------
-\newcommand{\Empty}[3]{%
-    \ifstrempty{#1}%
-    {%
-        #2% If #1 is empty
-    }{%
-        #3% If #1 is not empty
-    }%
+
+\readYAML{docs/_data/accomplishments}
+\section{Accomplishments}
+\edef\accomplishments{\getfromYAML{docs/_data/accomplishments}{accomps}{list}}
+
+\xforeach*{\accomplishments}{
+	\edef\accomp_link_#1{\getfromYAML{docs/_data/accomplishments}{#1}{link}}
+	\StrLen{\accomp_link_#1}[\accomplen_#1]
+	\getfromYAML{docs/_data/accomplishments}{#1}{entry}\ifnum\accomplen_#1>0 \Colorhref{\accomp_link_#1}{\#1}\fi \hfill \getfromYAML{docs/_data/accomplishments}{#1}{date} \\
 }
-
-% \Colorhref{\getfromYAML{docs/_data/accomplishements}{#1}{link}}{\#1}
-% \Empty{\getfromYAML{docs/_data/accomplishements}{#1}{link}}{A}{B}
-% \ifstrempty{\getfromYAML{docs/_data/accomplishements}{#1}{link}}{A}{B}
-
-\readYAML{docs/_data/accomplishements}
-\section{Accomplishements}
-\edef\accomplishements{\getfromYAML{docs/_data/accomplishements}{accomps}{list}}
-\begin{itemize}
-	\xforeach*{\accomplishements}{
-		\item[-] \getfromYAML{docs/_data/accomplishements}{#1}{entry} \hfill\getfromYAML{docs/_data/accomplishements}{#1}{date}
-	}
-\end{itemize}
 
 %----------------------------------------------------------------------------------------
 % EXPERIENCE SECTION
@@ -223,7 +212,6 @@
 
 \readYAML{docs/_data/experiences}
 \section{Experiences}
-
 \edef\experiences{\getfromYAML{docs/_data/experiences}{exps}{list}}
 \xforeach*{\experiences}{
 	\cventry
