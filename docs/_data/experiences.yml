@@ -4,55 +4,108 @@ exps:
 exp6: 
   title: Principal Engineer, Research
   year: March 2023 - Present
-  company: Samsung Research America - Starlabs
+  company: Samsung Research America
   place: Mountain View, CA, USA 
-  link:
+  link: neonlife.ai
+  lab: Starlabs
+  descs: desc1,desc2,desc3,desc4
+  desc1: Mentored and coached junior engineers, fostering technical growth and building a cohesive team environment
+  desc2: Designed and developed an optimize multithread API for Deep Learning inference, achieving efficiency and cost saving
+  desc3: Collaborated closely with managers, 3rd party companies, and fellow engineers to translate research insights into actionable product features
+  desc4: Actively participated in design reviews, ensuring high-quality software solutions and alignment with business objectives
+  technologies: C++, Python, Cuda, OpenGL, NVenc, TensorRT, Onnx Runtime, Swig
 
 exp5: 
   title: Senior Staff Engineer, Research
   year: September 2019 - March 2023
-  company: Samsung Research America - Think Tank Team / Starlabs
+  company: Samsung Research America
   place: Mountain View, CA, USA 
-  link: 
+  link: neonlife.ai
+  lab: Think Tank Team / Starlabs
+  descs: desc1,desc2,desc3,desc4
+  desc1: Led the development of a streaming framework using realtime image generation model over webrtc
+  desc2: Led the development of a wall clock device using voice recognition, hand gesture, face detection and recognition
+  desc3: Led the development of a 3D virtual assistant
+  desc4: Optimize training and inference pipeline of a photo realistic avatar generation
+  technologies: C++, C#, Python, Android, Cuda, Unity, Unreal, libtorch, Swig
 
 exp4: 
   title: Staff Engineer, Research
   year: September 2016 - September 2019
-  company: Samsung Research America - Think Tank Team
+  company: Samsung Research America
   place: Mountain View, CA, USA 
-  link: 
+  link: thinktankteam.info
+  lab: Think Tank Team
+  descs: desc1,desc2,desc3,desc4
+  desc1: Led the development of a cross-platform API for audio and voice processing (C++, IPC, SWIG)
+  desc2: Led the development of a modular computer vision API on Android used as a reference implementation for Bixby vision.
+  desc3: Developed a framework to run various Deep Learning Engine on Tizen TV (C#, Tensorflow, TFLite, Caffe)
+  desc4: Developed 360 video application with virtual augmentation (C#, Unity, GearVR)
+  technologies: Java, C#, C++, Android, Tizen, Unity, GearVR, Swig
 
 exp3: 
-  title: Software Engineer, Research
+  title: Senior Software Engineer, Research
   year: August 2014 - September 2016
-  company: Samsung Research America - Computer Vision Team
+  company: Samsung Research America
   place: Mountain View, CA, USA 
-  link: 
+  link: empty
+  lab: Computer Vision Team
+  descs: desc1,desc2,desc3,desc4
+  desc1: Developed an augmented reality SDK for Mobile devices (Vuforia, Wikitude, OCR, 2D & 3D Tracker)
+  desc2: Developed mixed reality proof of concept for Samsung devices (TV, GearVR, Mobile)
+  desc3: Developed features and apply GPU Optimization on chromium/blink for Tizen TV
+  desc4: Developed a 3D virtual assistant (Unity, C#)
+  technologies: Java, C#, C++, Android, Tizen, GearVR, Unity
 
 exp2: 
   title: Software Engineer, 3D
   year: January 2012 - July 2014
-  company: Klee 3D (formerly Actisku SA)
+  company: Klee Group (formerly Actisku SA)
   place: Montpellier, France
-  link: 
+  link: www.kleecommerce.com/en/solution/en-klee-3d/
+  lab: Klee 3D
+  descs: desc1,desc2,desc3
+  desc1: Adapt 3D Game Engine Unigine (C++) to JS using Emscripten
+  desc2: Implement 3D Framework to generate 3D Virtual Shop using QT interface
+  desc3: Implement 3D Player for mobile to preview 3D Virtual Shop (KLEE3D)
+  technologies: C++, JS, QT, iOS, Android, macOS, Unigine Engine
+  projects:
 
 exp1: 
   title: Software Engineer, 3D
   year: September 2009 - January 2012
-  company: Actiplay SA
+  company: ConcoursMania (formerly Actiplay SA)
   place: Montpellier, France
+  descs: desc1,desc2
+  desc1: Adapt 3D Game Engine Unigine (C++) to iOS, Android, macOS, Web player (ActiveX, NPAPI, JNI)
+  desc2: Develop multiple 3D Game for mobiles using Unigine Engine
+  projects: (Crypt,crypt-webgl.unigine.com);(CochonQuiRit,itunes.apple.com/fr/app/piggyto-le-cochon-qui-rit-hd/id501336495?mt=8);(Wipsy,itunes.apple.com/fr/app/wipsy/id630437274?mt=8);(TFOU,itunes.apple.com/fr/app/tfou/id444979797)
+  technologies: C++, NPAPI, ActiveX, iOS, Android, macOS, Unigine Engine
   link: 
-
+  lab: 
+  
 intern2: 
   title: Mobile Engineer
   year: January 2009 - September 2009
   company: Script'Games Studio
   place: Montpellier, France
+  descs: desc1,desc2
+  desc1: Developed iPhone games with Shiva (StoneTrip)
+  desc2: Specifications, planning, development of a 3D Serious Game to learn the security protocols of weapons handling
+  projects: (Bellum Tactics,www.youtube.com/watch?v=O93pveR_SmA)
+  technologies: C++, Java, JOGL, Shiva Editor
   link: 
-
+  lab:   
+  
 intern1: 
   title: Web Engineer
   year: March 2007 - September 2007
   company: Memodata
   place: Caen, France
-  link: 
+  descs: desc1
+  desc1: Web Developement of a letter game.
+  projects: (Boggle,boggle.sensagent.com/boggle/)
+  technologies: Html, Javascript, Java, JSP, Ajax
+  link:
+  lab: 
+  

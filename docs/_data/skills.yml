@@ -1,0 +1,12 @@
+skills: 
+  list: technical,managerial
+
+technicals:
+  languages: C++, Python and various other languages including (OpenGL, Cuda, ...)
+  platforms: OSX, Linux, Android, Tizen, Windows
+  mllibraries: Onnx Runtime, Torch, TensorRT
+  libraries: Swig, Flatbuffers, Protobuf, Flask
+  tools: Git, CMake, Ninja, Conan, Actions
+
+managerial:  
+  description: Leadership, team building, critical thinker, cross-functional collaboration and leadership, streamlining and optimization, continuous integration, elevating and mentoring promising individual.

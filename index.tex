@@ -8,6 +8,10 @@
 
 \usepackage{xstring}
 
+\usepackage{setspace}
+
+\usepackage{ifthen}
+
 \ExplSyntaxOn
 
 \NewDocumentCommand{\readYAML}{m}
@@ -148,6 +152,26 @@
 
 \usepackage{forloop}
 
+\makeatletter
+\@initializelength{\baseletterheight}
+\settoheight{\baseletterheight}{\sectionstyle{o}}
+\setlength{\baseletterheight}{\baseletterheight-0.95ex}
+\RenewDocumentCommand{\section}{sm}{%
+  \par\addvspace{1.5ex}%
+  \phantomsection{}% reset the anchor for hyperrefs
+  \addcontentsline{toc}{section}{#2}%
+  \if@left\else\if@fullrules\else\if@mixedrules\else%
+    \sectionrule\fi\fi\fi%
+  \strut\sectionstyle{#2}%
+  \if@fullrules%
+    \sectionrule%
+  \else\if@mixedrules%
+    \sectionrule%
+  \else\if@right\else%
+    \sectionrule\fi\fi\fi%
+  \par\nobreak\addvspace{0.5ex}\@afterheading}
+\makeatother
+
 % personal data
 \name{Anthony}{Liot}
 \firstname{Anthony}
@@ -181,6 +205,9 @@
 
 \makecvtitle
 
+Principal Engineer with a proven track record of leading complex projects and driving technical excellence. \\
+Seeking a challenging role at a company to leverage strong individual contributor skills and expertise in software architecture, design, and development to contribute to the company's success.
+
 %----------------------------------------------------------------------------------------
 % SUMMARY SECTION
 %----------------------------------------------------------------------------------------
@@ -211,16 +238,33 @@
 %----------------------------------------------------------------------------------------
 
 \readYAML{docs/_data/experiences}
+
 \section{Experiences}
 \edef\experiences{\getfromYAML{docs/_data/experiences}{exps}{list}}
 \xforeach*{\experiences}{
+	\edef\explink_#1{\getfromYAML{docs/_data/experiences}{#1}{link}}
+	\StrLen{\explink_#1}[\linklen_#1]
+	\edef\explab_#1{\getfromYAML{docs/_data/experiences}{#1}{lab}}
+	\StrLen{\explab_#1}[\lablen_#1]
+	\edef\descs_#1{\getfromYAML{docs/_data/experiences}{#1}{descs}}
 	\cventry
 	{\getfromYAML{docs/_data/experiences}{#1}{year}}
-	{\getfromYAML{docs/_data/experiences}{#1}{company}}
+	{\getfromYAML{docs/_data/experiences}{#1}{company} \ifnum \lablen_#1>0\ifnum \linklen_#1>0 - \Colorhref{\explink_#1}{\explab_#1}\fi\fi}
 	{\getfromYAML{docs/_data/experiences}{#1}{title}}
-	{}
 	{\getfromYAML{docs/_data/experiences}{#1}{place}}
 	{}
+	{\begin{scriptsize}
+		\begin{itemize}
+		\edef\descs{\getfromYAML{docs/_data/experiences}{#1}{descs}}
+		\xforeach*{\descs}{
+			\item[-] \getfromYAML{docs/_data/experiences}{#1}{##1}
+		}
+	\end{itemize}
+	\end{scriptsize}
+	\begin{tiny}
+	Technologies: \getfromYAML{docs/_data/experiences}{#1}{technologies}
+	\end{tiny}
+	}
 	{}
 }
 
@@ -234,12 +278,31 @@
 % TECHNICAL SKILLS SECTION
 %----------------------------------------------------------------------------------------
 
-\readYAML{docs/_data/technicalskills}
-\section{Technical Skills}
+\readYAML{docs/_data/skills}
+\section{Skills}
+
+\textbf{TECHNICALS:}
+\begin{itemize}
+\item[-] \emph{Languages:} \getfromYAML{docs/_data/skills}{technicals}{languages}
+\item[-] \emph{platforms:} \getfromYAML{docs/_data/skills}{technicals}{platforms}
+\item[-] \emph{ML libraries:} \getfromYAML{docs/_data/skills}{technicals}{mllibraries}
+\item[-] \emph{Libraries:} \getfromYAML{docs/_data/skills}{technicals}{libraries}
+\item[-] \emph{Tools:} \getfromYAML{docs/_data/skills}{technicals}{tools}
+\end{itemize}
+
+\hfill \break
+
+\textbf{MANAGERIAL:}
+\begin{itemize}
+	\item[-] \getfromYAML{docs/_data/skills}{managerial}{description} \\
+\end{itemize}
+
+
 
 %----------------------------------------------------------------------------------------
 % PATENT SECTION
 %----------------------------------------------------------------------------------------
+
 
 \readYAML{docs/_data/patents}
 \section{Patents \Colorhref{https://patents.justia.com/inventor/anthony-s-liot}{\#1} \Colorhref{https://patents.justia.com/inventor/anthony-liot}{\#2}}

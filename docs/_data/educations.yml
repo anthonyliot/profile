@@ -2,15 +2,15 @@ edus:
   list: edu2,edu1
 
 edu2:
- degree: Master’s degree (MSc)
+ degree: Master’s degree (M.S.)
  uni: University of Montpellier 2 (Science & Technology)
  city: Montpellier (France)
  year: 2009
- summary: Artificial Intelligence (AI) Engineering
+ summary: Artificial Intelligence (AI)
 
 edu1:
- degree: Bachelor’s degree (BSc)
+ degree: Bachelor’s degree (B.S.)
  uni: University of Caen (Science)
  city: Caen (France)
  year: 2007
- summary: Software Engineering
+ summary: Computer Science

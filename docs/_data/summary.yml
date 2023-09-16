@@ -1,19 +1,23 @@
 sums: 
-  list: sum1,sum2,sum3,sum4,sum5,sum6,sum7,sum8
+  list: sum8,sum7,sum6,sum5,sum4,sum3,sum2,sum1
 
-sum1:
+sum8:
   entry: 15+ years of experience in software development for desktop and mobile.
-sum2:  
-  entry: 8+ years experience managing individual and team projects.
-sum3:  
-  entry: 5+ years mentoring other team members on software design and development.
-sum4:  
-  entry: Extensive experience architecting and developing large scale design and cross-platform APIs.
-sum5:  
-  entry: Highly skilled in a variety of software languages, tools and methodologies.
-sum6:  
-  entry: Proficient in object oriented design.
 sum7:  
+  entry: 8+ years experience managing individual and team projects.
+sum6:  
+  entry: 5+ years mentoring other team members on software design and development.
+sum5:  
+  entry: Extensive experience architecting and developing large scale design and cross-platform APIs.
+sum4:  
+  entry: Highly skilled in a variety of software languages, tools and methodologies.
+sum3:  
+  entry: Proficient in object oriented design.
+sum2:  
   entry: Perfectionist, proactive, results-oriented, seeking for quality, correctness, performance and maintainability.
-sum8:  
+sum1:  
   entry: Excellent communication and organization skills.
+
+
+
+

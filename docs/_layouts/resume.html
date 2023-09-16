@@ -48,6 +48,50 @@
 
       </header>
 
+      {% if site.resume_section_summary %}
+      <!-- begin Skills -->
+      <section class="content-section">
+
+        <header class="section-header">
+          <h2>Summary</h2>
+        </header>
+
+        {% for summary in site.data.summary %}
+        <div class="resume-item">
+          {% if summary[0] != 'sums' %}
+          <li class="resume-item-details">{{ summary[1].entry }}</li>
+          {% endif %}
+        </div>
+        {% endfor %}
+          
+      </section>
+      <!-- end Skills -->
+      {% endif %}
+
+      {% if site.resume_section_accomplishments %}
+      <!-- begin Skills -->
+      <section class="content-section">
+
+        <header class="section-header">
+          <h2>Accomplishments</h2>
+        </header>
+
+        {% for accomp in site.data.accomplishments %}
+        <div class="resume-item">
+          {% if accomp[0] != 'accomps' %}
+            {% if !accomp[1].link %}
+              <span class="resume-item-details"> {{accomp[1].entry}} </span> &bull; <a target="_blank" href="https://{{ accomp[1].link }}">HERE</a><span style="float: right" class="resume-item-details">{{ accomp[1].date }}</span>
+            {% else %}
+              <span class="resume-item-details"> {{accomp[1].entry}} </span> <span style="float: right" class="resume-item-details">{{ accomp[1].date }}</span>
+            {% endif %}
+          {% endif %}
+        </div>
+        {% endfor %}
+          
+      </section>
+      <!-- end Skills -->
+      {% endif %}
+
       {% if site.resume_section_experience %}
       <!-- begin Experience -->
       <section class="content-section">
@@ -70,6 +114,18 @@
       <!-- end Experience -->
       {% endif %}
 
+      {% if site.resume_section_skills %}
+      <!-- begin Skills -->
+      <section class="content-section">
+
+        <header class="section-header">
+          <h2>Skills</h2>
+        </header>
+        
+      </section>
+      <!-- end Skills -->
+      {% endif %}
+
       {% if site.resume_section_patent %}
       <!-- begin Patent -->
       <section class="content-section">
@@ -81,7 +137,7 @@
         {% for patent in site.data.patents %}
           {% if patent[0] != 'patents' %}
           <div class="resume-item">
-            <span class="resume-item-details"><a href="https://{{ patent[1].url }}">{{ patent[1].pid }}</a></span> &bull; {{ patent[1].description }} <span style="float: right" class="resume-item-details">{{ patent[1].date }}</span>
+            <span class="resume-item-details"><a target="_blank" href="https://{{ patent[1].url }}">{{ patent[1].pid }}</a></span> &bull; {{ patent[1].description }} <span style="float: right" class="resume-item-details">{{ patent[1].date }}</span>
           </div>
           {% endif %}
         {% endfor %}
