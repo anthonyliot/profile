@@ -38,3 +38,6 @@
 ## Jenkyll build
 docs/_site/
 docs/.sass-cache/
+
+## OSX
+.DS_Store

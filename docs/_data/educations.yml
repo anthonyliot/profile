@@ -7,6 +7,7 @@ edu2:
  city: Montpellier (France)
  year: 2009
  summary: Artificial Intelligence (AI)
+ projects: VM&Compiler,github.com/anthonyliot/vmcompiler,github.com/anthonyliot/vmcompiler/blob/main/assets/screenshot.png?raw=true
 
 edu1:
  degree: Bachelor’s degree (B.S.)
@@ -14,3 +15,4 @@ edu1:
  city: Caen (France)
  year: 2007
  summary: Computer Science
+ projects: Shisensho,github.com/anthonyliot/shisensho,github.com/anthonyliot/shisensho/blob/main/assets/screenshot.png?raw=true|Arkanoid,github.com/anthonyliot/arkanoid,github.com/anthonyliot/arkanoid/blob/main/game/assets/screenshot.png?raw=true|Labyrinth,github.com/anthonyliot/labyrinth,github.com/anthonyliot/labyrinth/blob/main/assets/screenshot.png?raw=true|Mastermind,github.com/anthonyliot/mastermind,github.com/anthonyliot/mastermind/blob/main/assets/screenshot.png?raw=true

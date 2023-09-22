@@ -122,7 +122,7 @@
         {% assign projects = job[1].projects | split: "|" %}
         {% for pr in projects %}
         {% assign project_part = pr | split: "," %}
-        <span style="float: center"><a title="{{project_part[0]}}" target="_blank" href="https://{{project_part[1]}}"><img style="object-fit: cover; width: 64px; height: 64px;" src="https://{{project_part[2]}}"/></a><br></span>
+        <span style="float: center"><a title="{{project_part[0]}}" target="_blank" href="https://{{project_part[1]}}"><img style="object-fit: cover; width: 128px; height: 128px;" src="https://{{project_part[2]}}"/></a><br></span>
         {% endfor %}
         {% endif %}
 
@@ -198,6 +198,14 @@
         <h4 class="resume-item-details group" itemprop="description">{{ education[1].degree }} &bull; {{
           education[1].year }} &bull; {{ education[1].city }}</h4>
         <p class="resume-item-copy">{{ education[1].summary }}</p>
+
+        {% if education[1].projects %}
+        {% assign edu = education[1].projects | split: "|" %}
+        {% for e in edu %}
+          {% assign project_part = e | split: "," %}
+          <span style="float: center"><a title="{{project_part[0]}}" target="_blank" href="https://{{project_part[1]}}"><img style="object-fit: cover; width: 232px; height: 232px;" src="https://{{project_part[2]}}"/></a></span>
+        {% endfor %}
+        {% endif %}
       </div>
       {% endif %}
       {% endfor %}
