@@ -14,7 +14,7 @@ exp6:
   desc3: Collaborated closely with managers, 3rd party companies, and fellow engineers to translate research insights into actionable product features
   desc4: Actively participated in design reviews, ensuring high-quality software solutions and alignment with business objectives
   technologies: C++, Python, Cuda, OpenGL, NVenc, TensorRT, Onnx Runtime, Swig
-  projects: Neons,www.youtube.com/watch?v=Q6f6EXX-79w
+  projects: Neons,www.youtube.com/watch?v=Q6f6EXX-79w,github.com/anthonyliot/profile/blob/main/docs/_assets/images/neon.png?raw=true
 
 exp5: 
   title: Senior Staff Engineer, Research
@@ -96,7 +96,7 @@ intern2:
   descs: desc1,desc2
   desc1: Developed iPhone games with Shiva (StoneTrip)
   desc2: Specifications, planning, development of a 3D Serious Game to learn the security protocols of weapons handling
-  projects: Bellum Tactics,www.youtube.com/watch?v=O93pveR_SmA
+  projects: Bellum Tactics,www.youtube.com/watch?v=O93pveR_SmA,github.com/anthonyliot/profile/blob/main/docs/_assets/images/bellum.png?raw=true
   technologies: C++, Java, JOGL, Shiva Editor
   link: 
   lab:   
@@ -108,7 +108,7 @@ intern1:
   place: Caen, France
   descs: desc1
   desc1: Web Developement of a letter game.
-  projects: Boggle,boggle.sensagent.com/boggle/
+  projects: Boggle,boggle.sensagent.com/boggle/,github.com/anthonyliot/profile/blob/main/docs/_assets/images/boggle.png?raw=true
   technologies: Html, Javascript, Java, JSP, Ajax
   link:
   lab: 
