@@ -108,7 +108,11 @@
       <div class="resume-item" itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
         <span class="resume-item-title">{{ job[1].title }}</span><span style="float: right"
           class="resume-item-details">{{ job[1].year }}</span>
+        {% if job[1].lab %}
+        <div class="resume-item-details">{{ job[1].company }} &bull; {{ job[1].lab }} &bull; {{ job[1].place }}</div>
+        {% else %}
         <div class="resume-item-details">{{ job[1].company }} &bull; {{ job[1].place }}</div>
+        {% endif %}
 
         {% assign descs = job[1].descs | split: "," %}
         {% for desc in descs %}

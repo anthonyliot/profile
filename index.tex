@@ -176,7 +176,7 @@
 \name{Anthony}{Liot}
 \firstname{Anthony}
 \familyname{Liot} 
-\title{Principal Engineer, Research}
+\title{Director, Reseach and Development}
 \address{1277 Copper Peak Ln, San Jose, CA 95120, USA}
 \phone[mobile]{+1~408~823~6316}                  
 \email{anthony.liot@gmail.com}
@@ -205,7 +205,7 @@
 
 \makecvtitle
 
-Principal Engineer with a proven track record of leading complex projects and driving technical excellence. \\
+Director R\&D with a proven track record of leading complex projects and driving technical excellence. \\
 Seeking a challenging role at a company to leverage strong individual contributor skills and expertise in software architecture, design, and development to contribute to the company's success.
 
 %----------------------------------------------------------------------------------------
@@ -247,6 +247,12 @@ Seeking a challenging role at a company to leverage strong individual contributo
 	\edef\explab_#1{\getfromYAML{docs/_data/experiences}{#1}{lab}}
 	\StrLen{\explab_#1}[\lablen_#1]
 	\edef\descs_#1{\getfromYAML{docs/_data/experiences}{#1}{descs}}
+	\StrLen{\descs_#1}[\descslen_#1]
+	\edef\expnp_#1{\getfromYAML{docs/_data/experiences}{#1}{newpage}}
+	\StrLen{\expnp_#1}[\expnplen_#1]
+	\ifnum \expnplen_#1>0
+	\newpage
+	\fi
 	\cventry
 	{\getfromYAML{docs/_data/experiences}{#1}{year}}
 	{\getfromYAML{docs/_data/experiences}{#1}{company} \ifnum \lablen_#1>0\ifnum \linklen_#1>0 - \Colorhref{\explink_#1}{\explab_#1}\fi\fi}
@@ -254,15 +260,19 @@ Seeking a challenging role at a company to leverage strong individual contributo
 	{\getfromYAML{docs/_data/experiences}{#1}{place}}
 	{}
 	{\begin{scriptsize}
-		\begin{itemize}
-		\edef\descs{\getfromYAML{docs/_data/experiences}{#1}{descs}}
-		\xforeach*{\descs}{
-			\item[-] \getfromYAML{docs/_data/experiences}{#1}{##1}
-		}
-	\end{itemize}
+		\ifnum \descslen_#1>0
+			\begin{itemize}
+			\edef\descs{\getfromYAML{docs/_data/experiences}{#1}{descs}}
+			\xforeach*{\descs}{
+				\item[-] \getfromYAML{docs/_data/experiences}{#1}{##1}
+			}
+			\end{itemize}
+		\fi
 	\end{scriptsize}
+	\edef\exptec_#1{\getfromYAML{docs/_data/experiences}{#1}{technologies}}
+	\StrLen{\exptec_#1}[\expteclen_#1]
 	\begin{tiny}
-	Technologies: \getfromYAML{docs/_data/experiences}{#1}{technologies}
+	\ifnum \expteclen_#1>0 Technologies: \exptec_#1\fi
 	\end{tiny}
 	}
 	{}
@@ -272,7 +282,8 @@ Seeking a challenging role at a company to leverage strong individual contributo
 % PAGE 2
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-\newpage
+%% \newpage
+\hfill \break
 
 %----------------------------------------------------------------------------------------
 % TECHNICAL SKILLS SECTION

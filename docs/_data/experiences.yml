@@ -1,9 +1,20 @@
 exps: 
-  list: exp6,exp5,exp4,exp3,exp2,exp1
+  list: exp7,exp6,exp5,exp4,exp3,exp2,exp1
+
+exp7: 
+  title: Director, Reseach and Development
+  year: November 2023 - Present
+  company: Samsung Research America
+  place: Mountain View, CA, USA 
+  link: empty
+  lab: Frontier Product Experience
+  descs: 
+  technologies:
+  projects:
 
 exp6: 
   title: Principal Engineer, Research
-  year: March 2023 - Present
+  year: March 2023 - November 2023
   company: Samsung Research America
   place: Mountain View, CA, USA 
   link: neonlife.ai
@@ -85,6 +96,7 @@ exp1:
   desc2: Develop multiple 3D Game for mobiles using Unigine Engine
   projects: Crypt,crypt-webgl.unigine.com,github.com/anthonyliot/crypt/blob/main/assets/screenshots/00.png?raw=true
   technologies: C++, NPAPI, ActiveX, iOS, Android, macOS, Unigine Engine
+  newpage: yes
   link: 
   lab: 
   
