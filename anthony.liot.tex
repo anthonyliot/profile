@@ -4,6 +4,8 @@
 
 \documentclass[9pt,a4paper,sans]{moderncv}
 
+\usepackage{datetime}
+
 \usepackage{xparse}
 
 \usepackage{xstring}
@@ -11,6 +13,8 @@
 \usepackage{setspace}
 
 \usepackage{ifthen}
+
+\usepackage{footmisc}
 
 \ExplSyntaxOn
 
@@ -176,7 +180,7 @@
 \name{Anthony}{Liot}
 \firstname{Anthony}
 \familyname{Liot} 
-\title{Director, Reseach and Development}
+\title{Director, Research and Development}
 \address{1277 Copper Peak Ln, San Jose, CA 95120, USA}
 \phone[mobile]{+1~408~823~6316}                  
 \email{anthony.liot@gmail.com}
@@ -193,6 +197,20 @@
 \usepackage{color}
 \definecolor{gray}{RGB}{128,128,128}
 \newcommand\Colorhref[3][gray]{\href{https://#2}{\scriptsize\color{#1}#3}}
+
+  %%%%For footnote without number
+  \newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+   \endgroup
+ }
+
+ %%%%%%For Horizontal rule in the footnote
+  \makeatletter
+ \def\footnoterule{\kern-3\p@
+   \hrule \@width 2in \kern 2.6\p@} % the \hrule is .4pt high
+ \makeatother
 
 \recomputelengths
 
@@ -353,9 +371,12 @@ Seeking a challenging role at a company to leverage strong individual contributo
 	\item[-] \getfromYAML{docs/_data/languages}{#1}{lang} \getfromYAML{docs/_data/languages}{#1}{level}
 }
 \end{itemize}
-	
+
+\blfootnote{\today\ \currenttime}
+
 \clearpage
 
 \end{scriptsize}
+
 \end{document}
 
