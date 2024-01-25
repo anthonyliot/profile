@@ -1,14 +1,18 @@
 accomps: 
-  list: accomp6,accomp5,accomp4,accomp3,accomp2,accomp1
+  list: accomp7,accomp6,accomp5,accomp4,accomp3,accomp2,accomp1
 
+accomp7:
+  entry: AI shopping assistant at NRF - Retail Event
+  date: 2024
+  link: www.foxla.com/video/1399082
 accomp6:
-  entry: Public release of our photorealist avatar Neon at Samsung Experience Store
+  entry: Public release of our photorealist avatar Neon at Samsung Experience Store Standford, and Chevron Chula Vista
   date: 2023
-  link:
+  link: 
 accomp5:
   entry: Best of Innovation award finalists at CES.
   date: 2020
-  link:
+  link: www.toolify.ai/ai-news/discover-the-coolest-tech-at-ces-samsungs-neon-ai-and-more-472864#:~:text=Neon%2C%20an%20AI%20project%20backed,conversation%20depth%20and%20dynamic%20responses
 accomp4:  
   entry: President's Awards in recognition of outstanding technical contributions to SRA.
   date: 2019
