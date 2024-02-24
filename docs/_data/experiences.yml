@@ -8,9 +8,12 @@ exp7:
   place: Mountain View, CA, USA 
   link: empty
   lab: Frontier Product Experience
-  descs: 
-  technologies:
-  projects:
+  descs: desc1,desc2,desc3
+  desc1: Lead the pioneering efforts in harnessing mobile device acceleration on the Android platform to use knowledge graphs and large language models.
+  desc2: Developed innovative strategies to leverage hardware acceleration for efficient computation and storage of structured knowledge on mobile devices, enabling seamless integration with language models while maintaining optimal performance and low latency. 
+  desc3: Collaborated closely with Android development teams to implement and optimize acceleration techniques, pushing the boundaries of on-device AI capabilities and enhancing user experiences with enhanced contextual understanding and privacy.
+  technologies: Kotlin, Rust, Android, OpenCL
+  projects:    
 
 exp6: 
   title: Principal Engineer, Research
@@ -84,6 +87,7 @@ exp2:
   desc2: Implement 3D Framework to generate 3D Virtual Shop using QT interface
   desc3: Implement 3D Player for mobile to preview 3D Virtual Shop (KLEE3D)
   technologies: C++, JS, QT, iOS, Android, macOS, Unigine Engine
+  newpage: yes
   projects:
 
 exp1: 
@@ -96,7 +100,6 @@ exp1:
   desc2: Develop multiple 3D Game for mobiles using Unigine Engine
   projects: Crypt,crypt-webgl.unigine.com,github.com/anthonyliot/crypt/blob/main/assets/screenshots/00.png?raw=true
   technologies: C++, NPAPI, ActiveX, iOS, Android, macOS, Unigine Engine
-  newpage: yes
   link: 
   lab: 
   
