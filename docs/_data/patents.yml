@@ -1,6 +1,11 @@
 patents: 
-  list: patent8,patent7,patent6,patent5,patent4,patent3,patent2,patent1
+  list: patent9,patent8,patent7,patent6,patent5,patent4,patent3,patent2,patent1
 
+patent9:
+ url: patents.justia.com/patent/20230394715
+ pid: US20230394715
+ description: Hierarchical model-based generation of images
+ date: October 17, 2022
 patent8:
  url: patents.justia.com/patent/20200096945
  pid: US20200096945

@@ -177,16 +177,7 @@
 \makeatother
 
 % personal data
-\name{Anthony}{Liot}
-\firstname{Anthony}
-\familyname{Liot} 
-\title{Director, Research and Development}
-\address{1277 Copper Peak Ln, San Jose, CA 95120, USA}
-\phone[mobile]{+1~408~823~6316}                  
-\email{anthony.liot@gmail.com}
-\social[linkedin]{liotanthony}
-\social[github]{anthonyliot}
-\homepage{anthonyliot.github.io/profile}
+\name{}{}
 
 \usepackage{xpatch}
 \makeatletter
@@ -221,10 +212,21 @@
 % PAGE 1
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+\readYAML{docs/_data/perso}
+\edef\jt{\getfromYAML{docs/_data/perso}{perso}{title}}
+\title{\jt}
+\address{\getfromYAML{docs/_data/perso}{perso}{address}}
+\firstname{\getfromYAML{docs/_data/perso}{perso}{firstname}}
+\familyname{\getfromYAML{docs/_data/perso}{perso}{familyname}} 
+\phone[mobile]{\getfromYAML{docs/_data/perso}{perso}{phone}}                  
+\email{\getfromYAML{docs/_data/perso}{perso}{email}}
+\social[linkedin]{\getfromYAML{docs/_data/perso}{perso}{linkedin}}
+\social[github]{\getfromYAML{docs/_data/perso}{perso}{github}}
+\homepage{\getfromYAML{docs/_data/perso}{perso}{homepage}}
 \makecvtitle
 
-Director R\&D with a proven track record of leading complex projects and driving technical excellence. \\
-Seeking a challenging role at a company to leverage strong individual contributor skills and expertise in software architecture, design, and development to contribute to the company's success.
+\jt\:\getfromYAML{docs/_data/perso}{perso}{intro_l1} \\
+\getfromYAML{docs/_data/perso}{perso}{intro_l2} 
 
 %----------------------------------------------------------------------------------------
 % SUMMARY SECTION
@@ -334,7 +336,7 @@ Seeking a challenging role at a company to leverage strong individual contributo
 
 
 \readYAML{docs/_data/patents}
-\section{Patents \Colorhref{https://patents.justia.com/inventor/anthony-s-liot}{\#1} \Colorhref{https://patents.justia.com/inventor/anthony-liot}{\#2}}
+\section{Patents \Colorhref{patents.justia.com/inventor/anthony-s-liot}{\#1} \Colorhref{patents.justia.com/inventor/anthony-liot}{\#2}}
 \edef\patents{\getfromYAML{docs/_data/patents}{patents}{list}}
 \begin{itemize}
 \xforeach*{\patents}{
