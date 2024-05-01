@@ -1,6 +1,16 @@
 patents: 
-  list: patent9,patent8,patent7,patent6,patent5,patent4,patent3,patent2,patent1
+  list: patent11,patent10,patent9,patent8,patent7,patent6,patent5,patent4,patent3,patent2,patent1
 
+patent11:
+ url: patents.justia.com/patent/20240013464
+ pid: US20240013464
+ description: Multimodal disentanglement for generating virtual human avatars
+ date: April 5, 2023
+patent10:
+ url: patents.justia.com/patent/20230394732
+ pid: US20230394732
+ description: Creating images, meshes, and talking animations from mouth shape data
+ date: October 17, 2023
 patent9:
  url: patents.justia.com/patent/20230394715
  pid: US20230394715
@@ -42,7 +52,31 @@ patent2:
  description: Virtual agent
  date: January 14, 2016
 patent1:
- url: patents.justia.com/patent/20180149864
- pid: US20180149864
+ url: patents.justia.com/patent/20160341959
+ pid: US20160341959
  description: Image processing for head mounted display devices
  date: July 16, 2015
+
+# US-20240013464-A1 MULTIMODAL DISENTANGLEMENT FOR GENERATING VIRTUAL HUMAN AVATARS
+# US-20230394715-A1 HIERARCHICAL MODEL-BASED GENERATION OF IMAGES 
+# US-20230394732-A1 CREATING IMAGES, MESHES, AND TALKING ANIMATIONS FROM MOUTH SHAPE DATA
+# US-11782391-B2 Wall clock AI voice assistant
+# US-10943398-B2 Augmented reality device and operation thereof
+# US-10909371-B2 System and method for contextual driven intelligence
+# US-10902262-B2 Vision intelligence management for electronic devices
+# US-10769438-B2 Augmented reality
+# US-10684467-B2 Image processing for head mounted display devices
+# US-10664741-B2 Selecting a behavior of a virtual agent
+# US-20200096945-A1 WALL CLOCK AI VOICE ASSISTANT
+# US-10527846-B2 Image processing for head mounted display devices
+# US-10515350-B2 Method and apparatus to trigger mobile payment based on distance
+# US-20180341811-A1 Augmented Reality
+# US-20180204061-A1 VISION INTELLIGENCE MANAGEMENT FOR ELECTRONIC DEVICES
+# US-20180204059-A1 SYSTEM AND METHOD FOR CONTEXTUAL DRIVEN INTELLIGENCE
+# US-20180149864-A1 IMAGE PROCESSING FOR HEAD MOUNTED DISPLAY DEVICES
+# US-20180143429-A1 IMAGE PROCESSING FOR HEAD MOUNTED DISPLAY DEVICES 
+# US-9910275-B2 Image processing for head mounted display devices
+# US-20180018825-A1 Augmented Reality Device and Operation Thereof
+# US-20170270510-A1 METHOD AND APPARATUS TO TRIGGER MOBILE PAYMENT BASED ON DISTANCE
+# US-20170206095-A1 VIRTUAL AGENT
+# US-20160341959-A1 IMAGE PROCESSING FOR HEAD MOUNTED DISPLAY DEVICES
