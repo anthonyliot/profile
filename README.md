@@ -1,4 +1,4 @@
-[![Build Resume](https://github.com/anthonyliot/profile/actions/workflows/build.yml/badge.svg?branch=main&event=release)](https://github.com/anthonyliot/profile/actions/workflows/build.yml)
+[![Generate PDF Resume](https://github.com/anthonyliot/profile/actions/workflows/build.yml/badge.svg)](https://github.com/anthonyliot/profile/actions/workflows/build.yml)
 
 ![](portfolio/portfolio.gif)
 
