@@ -1,9 +1,6 @@
 name: Build LaTeX document
 on: [push]
 
-env:
-  GITHUB_TOKEN: ${{ secrets.TOKEN }}
-
 jobs:
   build_latex:
     runs-on: ubuntu-latest
@@ -36,8 +33,18 @@ jobs:
           git tag $VERSION_TAG
           git push origin $VERSION_TAG
             
-      - name: Upload PDF file
+      - name: Upload PDF file to artifact
         uses: actions/upload-artifact@v3
         with:
           name: PDF
           path: anthony.liot.pdf
+
+      - name: Upload PDF file to tag
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.TOKEN }}
+          file: anthony.liot.pdf
+          asset_name: anthony.liot.pdf
+          tag: $VERSION_TAG
+          overwrite: true
+          body: "Resume $VERSION_TAG"
