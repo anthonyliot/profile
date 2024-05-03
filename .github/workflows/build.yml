@@ -18,11 +18,10 @@ jobs:
       - name: Generate Git Tag
         id: generate_tag
         run: |
-          VERSION_PREFIX="v"
           VERSION_INCR=$(git rev-list --count HEAD | head -n 1)
           VERSION_TIME=$(date +'%Y%m%d' | head -n 1)
           VERSION_SHA=$(git rev-parse HEAD | cut -c 1-8  | head -n 1)
-          VERSION_TAG="${VERSION_PREFIX}${VERSION_INCR}.${VERSION_TIME}.${VERSION_SHA}"
+          VERSION_TAG="v${VERSION_INCR}.${VERSION_TIME}.${VERSION_SHA}"
           echo "Generated new tag: $VERSION_TAG"
           echo "VERSION_TAG=$VERSION_TAG" >> $GITHUB_ENV
   
@@ -46,6 +45,6 @@ jobs:
           repo_token: ${{ secrets.TOKEN }}
           file: anthony.liot.pdf
           asset_name: anthony.liot.pdf
-          tag: $VERSION_TAG
+          tag: ${{ github.ref }}
           overwrite: true
-          body: "Resume $VERSION_TAG"
+          body: "Resume ${{ github.ref }}"
