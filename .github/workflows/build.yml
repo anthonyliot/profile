@@ -23,14 +23,14 @@ jobs:
           VERSION_SHA=$(git rev-parse HEAD | cut -c 1-8  | head -n 1)
           VERSION_TAG="v${VERSION_INCR}.${VERSION_TIME}.${VERSION_SHA}"
           echo "Generated new tag: $VERSION_TAG"
-          echo "VERSION_TAG=$VERSION_TAG" >> $GITHUB_ENV
+          echo "VERSION_TAG=$VERSION_TAG" >> $GITHUB_OUTPUT  
   
       - name: Push Git Tag
         run: |
           git config user.name "GitHub Actions"
           git config user.email "github-actions@users.noreply.github.com"
-          git tag $VERSION_TAG || true
-          git push origin $VERSION_TAG || true
+          git tag ${{ steps.generate_tag.outputs.VERSION_TAG }} || true
+          git push origin ${{ steps.generate_tag.outputs.VERSION_TAG }} || true
           git fetch || true
             
       - name: Upload PDF file to artifact
@@ -45,6 +45,6 @@ jobs:
           repo_token: ${{ secrets.TOKEN }}
           file: anthony.liot.pdf
           asset_name: anthony.liot.pdf
-          tag: ${{ github.ref }}
+          tag: ${{ steps.generate_tag.outputs.VERSION_TAG }}  
           overwrite: true
-          body: "Resume ${{ github.ref }}"
+          body: "Resume ${{ steps.generate_tag.outputs.VERSION_TAG }}"
