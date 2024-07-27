@@ -1,35 +1,56 @@
-exps: 
-  list: exp7,exp6,exp5,exp4,exp3,exp2,exp1
+# exps: 
+#   list: exp7,exp6,exp5,exp4,exp3,exp2,exp1
 
-exp7: 
-  title: Technical Director
-  year: November 2023 - April 2024
-  company: Samsung Research America
-  place: Mountain View, CA, USA 
-  link: empty
-  lab: Frontier Product Experience
-  descs: desc1,desc2,desc3,desc4
-  desc1: Led a team of over 10 engineers, including Staff Engineers, ML Researchers, Applied Researchers, and Software Engineers.
-  desc2: Led pioneering efforts in harnessing mobile device acceleration on the Android platform to utilize knowledge graphs and large language models.
-  desc3: Developed innovative strategies to leverage hardware acceleration for efficient computation and storage of structured knowledge on mobile devices, enabling seamless integration with language models while maintaining optimal performance and low latency. 
-  desc4: Collaborated closely with Android development teams to implement and optimize acceleration techniques, pushing the boundaries of on-device AI capabilities and enhancing user experiences with enhanced contextual understanding and privacy.
-  technologies: Kotlin, Rust, Android, OpenCL
-  projects:    
+exps: 
+   list: exp6,exp5,exp4,exp3,exp2,exp1
 
 exp6: 
   title: Principal Engineer, Research
-  year: March 2023 - November 2023
+  year: March 2023 - April 2024
   company: Samsung Research America
   place: Mountain View, CA, USA 
   link: neonlife.ai
   lab: Starlabs
-  descs: desc1,desc2,desc3,desc4
-  desc1: Mentored and coached junior engineers, staff engineers, and applied researchers, fostering technical growth and creating a cohesive team environment.
-  desc2: Designed and developed an optimize multithread API for Deep Learning inference, achieving efficiency and cost saving
-  desc3: Collaborated closely with managers, 3rd party companies, and fellow engineers to translate research insights into actionable product features
-  desc4: Actively participated in design reviews, ensuring high-quality software solutions and alignment with business objectives
-  technologies: C++, Python, Cuda, OpenGL, NVenc, TensorRT, Onnx Runtime, Swig, Docker, Kubernete, AWS
+  descs: desc1,desc2,desc3,desc4,desc5,desc6
+  desc1: Led a team of over 10 engineers, including Software Engineers, ML Researchers, Applied Researchers. 
+  desc2: Collaborated closely with managers, 3rd party companies, and fellow engineers to translate research insights into actionable product features.
+  desc3: Actively participated in design reviews, ensuring high-quality software solutions and alignment with business objectives.
+  desc4: Developed innovative strategies to leverage hardware acceleration for efficient computation and storage of structured knowledge on mobile devices, enabling seamless integration with language models while maintaining optimal performance and low latency. 
+  desc5: Designed and developed an optimize multithread API for Deep Learning inference, achieving efficiency and cost saving.
+  desc6: Collaborated closely with Android development teams to implement and optimize acceleration techniques, pushing the boundaries of on-device AI capabilities and enhancing user experiences with enhanced contextual understanding and privacy.
+  technologies: C++, Python, Cuda, Java, Kotlin, Android, OpenCL, OpenGL, NVenc, TensorRT, Onnx Runtime, Swig, Docker, Kubernete, AWS
   projects: Neons,www.youtube.com/watch?v=Q6f6EXX-79w,github.com/anthonyliot/profile/blob/main/docs/_assets/images/neon.png?raw=true
+
+# exp7: 
+#   title: Technical Director
+#   year: November 2023 - April 2024
+#   company: Samsung Research America
+#   place: Mountain View, CA, USA 
+#   link: empty
+#   lab: Frontier Product Experience
+#   descs: desc1,desc2,desc3,desc4
+#   desc1: Led a team of over 10 engineers, including Staff Engineers, ML Researchers, Applied Researchers, and Software Engineers.
+#   desc2: Led pioneering efforts in harnessing mobile device acceleration on the Android platform to utilize knowledge graphs and large language models.
+#   desc3: Developed innovative strategies to leverage hardware acceleration for efficient computation and storage of structured knowledge on mobile devices, enabling seamless integration with language models while maintaining optimal performance and low latency. 
+#   desc4: Collaborated closely with Android development teams to implement and optimize acceleration techniques, pushing the boundaries of on-device AI capabilities and enhancing user experiences with enhanced contextual understanding and privacy.
+#   technologies: Kotlin, Rust, Android, OpenCL
+#   projects:    
+
+# exp6: 
+#   title: Principal Engineer, Research
+#   year: March 2023 - November 2023
+#   company: Samsung Research America
+#   place: Mountain View, CA, USA 
+#   link: neonlife.ai
+#   lab: Starlabs
+#   descs: desc1,desc2,desc3,desc4
+#   desc1: Mentored and coached junior engineers, staff engineers, and applied researchers, fostering technical growth and creating a cohesive team environment.
+#   desc2: Designed and developed an optimize multithread API for Deep Learning inference, achieving efficiency and cost saving
+#   desc3: Collaborated closely with managers, 3rd party companies, and fellow engineers to translate research insights into actionable product features
+#   desc4: Actively participated in design reviews, ensuring high-quality software solutions and alignment with business objectives
+#   desc5: Worked with various voice recognition, voice synthesis, and voice cloning technologies using third-party software and machine learning models.
+#   technologies: C++, Python, Cuda, OpenGL, NVenc, TensorRT, Onnx Runtime, Swig, Docker, Kubernete, AWS
+#   projects: Neons,www.youtube.com/watch?v=Q6f6EXX-79w,github.com/anthonyliot/profile/blob/main/docs/_assets/images/neon.png?raw=true
 
 exp5: 
   title: Senior Staff Engineer, Research
@@ -39,10 +60,10 @@ exp5:
   link: neonlife.ai
   lab: Think Tank Team / Starlabs
   descs: desc1,desc2,desc3,desc4
-  desc1: Led the development of a streaming framework using realtime image generation model over webrtc
-  desc2: Led the development of a wall clock device using voice recognition, hand gesture, face detection and recognition
-  desc3: Led the development of a 3D virtual assistant
-  desc4: Optimize training and inference pipeline of a photo realistic avatar generation
+  desc1: Led the development of a streaming framework using realtime image generation model over webrtc.
+  desc2: Led the development of a wall clock device using voice recognition, hand gesture, face detection and recognition.
+  desc3: Led the development of a 3D virtual assistant.
+  desc4: Optimize training and inference pipeline of a photo realistic avatar generation.
   technologies: C++, C#, Python, Android, Cuda, Unity, Unreal, libtorch, Swig, Docker, Kubernete, AWS
   projects:
 
@@ -54,10 +75,10 @@ exp4:
   link: thinktankteam.info
   lab: Think Tank Team
   descs: desc1,desc2,desc3,desc4
-  desc1: Led the development of a cross-platform API for audio and voice processing
+  desc1: Led the development of a cross-platform API for audio and voice processing.
   desc2: Led the development of a modular computer vision API on Android used as a reference implementation for Bixby vision.
-  desc3: Developed a framework to run various Deep Learning Engine on Tizen TV
-  desc4: Developed 360 video application with virtual augmentation
+  desc3: Developed a framework to run various Deep Learning Engine on Tizen TV.
+  desc4: Developed 360 video application with virtual augmentation.
   technologies: Java, C#, C++, Android, Tizen, Unity, GearVR, Swig, Tensorflow, TFLite
   projects:
 
@@ -69,10 +90,10 @@ exp3:
   link: empty
   lab: Computer Vision Team
   descs: desc1,desc2,desc3,desc4
-  desc1: Developed an augmented reality SDK for Mobile devices (Vuforia, Wikitude, OCR, 2D & 3D Tracker)
-  desc2: Developed mixed reality proof of concept for Samsung devices
-  desc3: Developed features and apply GPU Optimization on chromium/blink for Tizen TV
-  desc4: Developed a 3D virtual assistant
+  desc1: Developed an augmented reality SDK for Mobile devices (Vuforia, Wikitude, OCR, 2D & 3D Tracker).
+  desc2: Developed mixed reality proof of concept for Samsung devices.
+  desc3: Developed features and apply GPU Optimization on chromium/blink for Tizen TV.
+  desc4: Developed a 3D virtual assistant.
   technologies: Java, C#, C++, Android, Tizen, GearVR, Unity
   projects:
 
@@ -84,9 +105,9 @@ exp2:
   link: www.kleecommerce.com/en/solution/en-klee-3d/
   lab: Klee 3D
   descs: desc1,desc2,desc3
-  desc1: Adapt 3D Game Engine Unigine (C++) to JS using Emscripten
-  desc2: Implement 3D Framework to generate 3D Virtual Shop using QT interface
-  desc3: Implement 3D Player for mobile to preview 3D Virtual Shop (KLEE3D)
+  desc1: Adapt 3D Game Engine Unigine (C++) to JS using Emscripten.
+  desc2: Implement 3D Framework to generate 3D Virtual Shop using QT interface.
+  desc3: Implement 3D Player for mobile to preview 3D Virtual Shop (KLEE3D).
   technologies: C++, JS, QT, iOS, Android, macOS, Unigine Engine
   newpage: yes
   projects:
@@ -97,8 +118,8 @@ exp1:
   company: ConcoursMania (formerly Actiplay SA)
   place: Montpellier, France
   descs: desc1,desc2
-  desc1: Adapt 3D Game Engine Unigine (C++) to iOS, Android, macOS, Web player (ActiveX, NPAPI, JNI)
-  desc2: Develop multiple 3D Game for mobiles using Unigine Engine
+  desc1: Adapt 3D Game Engine Unigine (C++) to iOS, Android, macOS, Web player (ActiveX, NPAPI, JNI).
+  desc2: Develop multiple 3D Game for mobiles using Unigine Engine.
   projects: Crypt,crypt-webgl.unigine.com,github.com/anthonyliot/crypt/blob/main/assets/screenshots/00.png?raw=true
   technologies: C++, NPAPI, ActiveX, iOS, Android, macOS, Unigine Engine
   link: 
@@ -110,8 +131,8 @@ intern2:
   company: Script'Games Studio
   place: Montpellier, France
   descs: desc1,desc2
-  desc1: Developed iPhone games with Shiva (StoneTrip)
-  desc2: Specifications, planning, development of a 3D Serious Game to learn the security protocols of weapons handling
+  desc1: Developed iPhone games with Shiva (StoneTrip).
+  desc2: Specifications, planning, development of a 3D Serious Game to learn the security protocols of weapons handling.
   projects: Bellum Tactics,www.youtube.com/watch?v=O93pveR_SmA,github.com/anthonyliot/profile/blob/main/docs/_assets/images/bellum.png?raw=true
   technologies: C++, Java, JOGL, Shiva Editor
   link: 
