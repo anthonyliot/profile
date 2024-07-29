@@ -259,7 +259,7 @@
 
 \readYAML{docs/_data/experiences}
 
-\section{Experiences}
+\section{Experience}
 \edef\experiences{\getfromYAML{docs/_data/experiences}{exps}{list}}
 \xforeach*{\experiences}{
 	\edef\explink_#1{\getfromYAML{docs/_data/experiences}{#1}{link}}
@@ -292,7 +292,7 @@
 	\edef\exptec_#1{\getfromYAML{docs/_data/experiences}{#1}{technologies}}
 	\StrLen{\exptec_#1}[\expteclen_#1]
 	\begin{tiny}
-	\ifnum \expteclen_#1>0 Technologies: \exptec_#1\fi
+	\ifnum \expteclen_#1>0 Technology: \exptec_#1\fi
 	\end{tiny}
 	}
 	{}
@@ -336,7 +336,8 @@
 
 
 \readYAML{docs/_data/patents}
-\section{Patents \Colorhref{patents.justia.com/inventor/anthony-s-liot}{\#1} \Colorhref{patents.justia.com/inventor/anthony-liot}{\#2}}
+% \section{Patents \Colorhref{patents.justia.com/inventor/anthony-s-liot}{\#1} \Colorhref{patents.justia.com/inventor/anthony-liot}{\#2}}
+\section{Patents}
 \edef\patents{\getfromYAML{docs/_data/patents}{patents}{list}}
 \begin{itemize}
 \xforeach*{\patents}{
