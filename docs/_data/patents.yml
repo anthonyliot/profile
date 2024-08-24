@@ -1,21 +1,31 @@
 patents: 
-  list: patent11,patent10,patent9,patent8,patent7,patent6,patent5,patent4,patent3,patent2,patent1
+  list: patent13,patent12,patent11,patent10,patent9,patent8,patent7,patent6,patent5,patent4,patent3,patent2,patent1
 
+patent13:
+ url: patents.justia.com/patent/20240221260
+ pid: US20240221260
+ description: End to end virutal human speech and movement synthesization
+ date: July 4, 2024
+patent12:
+ url: patents.justia.com/patent/20240221254
+ pid: US20240221254
+ description: Image generation using one-dimensional inputs
+ date: July 4, 2024
 patent11:
  url: patents.justia.com/patent/20240013464
  pid: US20240013464
  description: Multimodal disentanglement for generating virtual human avatars
- date: April 5, 2023
+ date: January 11, 2024
 patent10:
  url: patents.justia.com/patent/20230394732
  pid: US20230394732
  description: Creating images, meshes, and talking animations from mouth shape data
- date: October 17, 2023
+ date: December 7, 2023
 patent9:
  url: patents.justia.com/patent/20230394715
  pid: US20230394715
  description: Hierarchical model-based generation of images
- date: October 17, 2022
+ date: December 7, 2023
 patent8:
  url: patents.justia.com/patent/20200096945
  pid: US20200096945
@@ -25,38 +35,39 @@ patent7:
  url: patents.justia.com/patent/20180341811
  pid: US20180341811
  description: Augmented reality
- date: May 21, 2018
+ date: November 29, 2018
 patent6:
+ url: patents.justia.com/patent/20180204059
+ pid: US20180204059
+ description: System and method for contextual driven intelligence
+ date: July 19, 2018
+patent5:
  url: patents.justia.com/patent/20180204061
  pid: US20180204061
  description: Vision intelligence management for electronic devices
  date: January 19, 2018
-patent5:
+patent4:
  url: patents.justia.com/patent/20180018825
  pid: US20180018825
  description: Augmented reality device and operation thereof
- date: May 9, 2017
-patent4:
- url: patents.justia.com/patent/20180204059
- pid: US20180204059
- description: System and method for contextual driven intelligence
- date: Mars 16, 2017
+ date: January 18, 2018
 patent3:
  url: patents.justia.com/patent/20170270510
  pid: US20170270510
  description: Method and apparatus to trigger mobile payment based on distance
- date: August 25, 2016
+ date: September 21, 2017
 patent2:
  url: patents.justia.com/patent/20170206095
  pid: US20170206095
  description: Virtual agent
- date: January 14, 2016
+ date: July 20, 2017
 patent1:
  url: patents.justia.com/patent/20160341959
  pid: US20160341959
  description: Image processing for head mounted display devices
- date: July 16, 2015
+ date: November 24, 2016
 
+# US-20240221254 IMAGE GENERATION USING ONE-DIMENSIONAL INPUTS
 # US-20240013464-A1 MULTIMODAL DISENTANGLEMENT FOR GENERATING VIRTUAL HUMAN AVATARS
 # US-20230394715-A1 HIERARCHICAL MODEL-BASED GENERATION OF IMAGES 
 # US-20230394732-A1 CREATING IMAGES, MESHES, AND TALKING ANIMATIONS FROM MOUTH SHAPE DATA
