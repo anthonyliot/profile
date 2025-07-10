@@ -2,7 +2,20 @@
 #   list: exp7,exp6,exp5,exp4,exp3,exp2,exp1
 
 exps: 
-   list: exp6,exp5,exp4,exp3,exp2,exp1
+   list: exp7,exp6,exp5,exp4,exp3,exp2,exp1
+
+exp7: 
+  title: Senior Software Engineer
+  year: October 2024 - Present
+  company: Apple
+  place: Cupertino, CA, USA 
+  link: developer.apple.com/documentation/quartzcore
+  lab: Core Animation
+  descs: desc1
+  desc1: Working on the next generation of Apple products, focusing on UI Compositing and frame pacing.
+  technologies: C++, Objective-C, Metal
+  projects: 
+
 
 exp6: 
   title: Principal Engineer, Research
